@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .form-container {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="form-container bg-white rounded-lg p-8 w-full max-w-2xl">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Employee Information Form</h1>
+            <p class="text-gray-600">Please fill out this form with your details</p>
+        </div>
+        
+        <form class="space-y-6">
+            <!-- Full Name -->
+            <div>
+                <label for="fullname" class="block text-sm font-medium text-gray-700 mb-1">Full Name <span class="text-red-500">*</span></label>
+                <input type="text" id="fullname" name="fullname" required 
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none">
+            </div>
+            
+            <!-- Contact Number -->
+            <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Contact Number <span class="text-red-500">*</span></label>
+                <input type="tel" id="phone" name="phone" required 
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none">
+            </div>
+            
+            <!-- Email Address -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" required 
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none">
+            </div>
+            
+            <!-- Company Name -->
+            <div>
+                <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name <span class="text-red-500">*</span></label>
+                <input type="text" id="company" name="company" required 
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none">
+            </div>
+            
+            <!-- Address -->
+            <div>
+                <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                <textarea id="address" name="address" rows="3" 
+                          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"></textarea>
+            </div>
+            
+            <!-- Department -->
+            <div>
+                <label for="department" class="block text-sm font-medium text-gray-700 mb-1">Department <span class="text-red-500">*</span></label>
+                <select id="department" name="department" required 
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none">
+                    <option value="" disabled selected>Select your department</option>
+                    <option value="HR">HR</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Development">Development</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            
+            <!-- Gender -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                <div class="mt-1 space-y-2">
+                    <div class="flex items-center">
+                        <input id="male" name="gender" type="radio" value="Male" 
+                               class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                        <label for="male" class="ml-2 block text-sm text-gray-700">Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="female" name="gender" type="radio" value="Female" 
+                               class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                        <label for="female" class="ml-2 block text-sm text-gray-700">Female</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="prefer-not-to-say" name="gender" type="radio" value="Prefer not to say" 
+                               class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                        <label for="prefer-not-to-say" class="ml-2 block text-sm text-gray-700">Prefer not to say</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="pt-4">
+                <button type="submit" 
+                        class="submit-btn w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                    Submit Form
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
